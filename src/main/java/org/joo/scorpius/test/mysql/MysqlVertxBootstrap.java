@@ -80,7 +80,7 @@ public class MysqlVertxBootstrap extends VertxBootstrap {
     }
 
     private void configureTriggers() {
-        triggerManager.setHandlingStrategy(new DisruptorHandlingStrategy(1024, new YieldingWaitStrategy()));
+        triggerManager.setHandlingStrategy(new DisruptorHandlingStrategy(8192, new YieldingWaitStrategy()));
         triggerManager.registerTrigger("greet_java").withAction(MysqlTestTrigger::new);
     }
 }
