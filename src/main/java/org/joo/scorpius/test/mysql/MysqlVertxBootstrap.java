@@ -11,6 +11,7 @@ import org.apache.commons.pool.ObjectPool;
 import org.apache.commons.pool.impl.GenericObjectPool;
 import org.apache.commons.pool.impl.GenericObjectPoolFactory;
 import org.joo.scorpius.support.vertx.VertxBootstrap;
+import org.joo.scorpius.test.mysql.triggers.MysqlTestTrigger;
 import org.joo.scorpius.trigger.handle.disruptor.DisruptorHandlingStrategy;
 
 import com.lmax.disruptor.YieldingWaitStrategy;

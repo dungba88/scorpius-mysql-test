@@ -1,4 +1,4 @@
-package org.joo.scorpius.test.mysql;
+package org.joo.scorpius.test.mysql.dto;
 
 import org.joo.scorpius.support.BaseRequest;
 
