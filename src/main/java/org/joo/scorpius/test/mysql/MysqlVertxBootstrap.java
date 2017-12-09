@@ -22,6 +22,7 @@ import com.typesafe.config.Config;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
+import io.vertx.core.http.HttpServerOptions;
 import io.vertx.ext.web.Router;
 
 public class MysqlVertxBootstrap extends CompositionBootstrap {
@@ -30,8 +31,8 @@ public class MysqlVertxBootstrap extends CompositionBootstrap {
         bootstraps.add(new TypeSafeBootstrap());
         bootstraps.add(AbstractBootstrap.from(this::configureMysql));
         bootstraps.add(AbstractBootstrap.from(this::configureTriggers));
-        bootstraps.add(new VertxBootstrap(new VertxOptions().setEventLoopPoolSize(8).setWorkerPoolSize(8), 1912) {
-            
+        bootstraps.add(new VertxBootstrap(new VertxOptions(), new HttpServerOptions().setUseAlpn(true), 1912) {
+
             @Override
             protected Router configureRoutes(final Vertx vertx) {
                 Router restAPI = super.configureRoutes(vertx);
